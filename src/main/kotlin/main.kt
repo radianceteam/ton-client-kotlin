@@ -1,18 +1,32 @@
 
-import com.radiance.tonclient.ClientModule
-import com.radiance.tonclient.await
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import ton.sdk.TONContext
+import examples.*
+import kotlinx.coroutines.runBlocking
 
-fun main() {
+fun main() = runBlocking {
     println("TON Client")
 
-    GlobalScope.launch(Dispatchers.Unconfined) {
-        val version = ClientModule(TONContext.create("""{"network": {"server_address": "net.ton.dev"}}""")).version().await()
-        println(version)
-    }
+    val client = ClientExample()
+    client.version()
+    client.subscription()
 
+    val abi = AbiExample()
+    abi.encodeV2()
+
+    val contract = ContractExample()
+    contract.generateRandomSignKeys()
+
+    val crypto = CryptoExample()
+    crypto.hash()
+    crypto.keys()
+    crypto.math()
+    crypto.nacl()
+    crypto.scrypt()
+
+    val processing = ProcessingExample()
+    processing.waitMessage()
+
+    val tvm = TvmExample()
+    tvm.executeGet()
+    tvm.runExecutor()
 
 }
