@@ -1,4 +1,4 @@
-# Kotlin Examples
+# TON-SDK Client Kotlin Examples
 
 This project describes how to setup a gradle project (see: ```build.gradle.kts```)
 and how to use the underlying dependency [https://github.com/radianceteam/ton-client-java/](https://github.com/radianceteam/ton-client-java/).
