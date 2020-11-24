@@ -1,6 +1,7 @@
-package examples
+package examples.modules
 
 import com.radiance.tonclient.await
+import examples.Helper
 
 class ContractExample {
 

@@ -1,9 +1,13 @@
 
-import examples.*
+import com.radiance.tonclient.Crypto
+import examples.graphql.Sender
+import examples.modules.*
 import kotlinx.coroutines.runBlocking
 
 fun main() = runBlocking {
-    println("TON Client")
+    println("===================================")
+    println("---         TON Client          ---")
+    println("===================================")
 
     val client = ClientExample()
     client.version()
@@ -28,5 +32,14 @@ fun main() = runBlocking {
     val tvm = TvmExample()
     tvm.executeGet()
     tvm.runExecutor()
+
+    println("===================================")
+    println("---         TON GraphQL        ---")
+    println("===================================")
+
+//    val senderAddress = ""
+//    val senderKeys = Crypto.KeyPair("", "")
+//    val recepientAddress = ""
+//    Sender().sendMoney(senderAddress, senderKeys, recepientAddress)
 
 }

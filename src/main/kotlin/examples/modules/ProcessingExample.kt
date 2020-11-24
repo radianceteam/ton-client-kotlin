@@ -1,7 +1,8 @@
-package examples
+package examples.modules
 
 import com.radiance.tonclient.Abi
 import com.radiance.tonclient.await
+import examples.Helper
 import java.util.concurrent.atomic.AtomicInteger
 
 class ProcessingExample {

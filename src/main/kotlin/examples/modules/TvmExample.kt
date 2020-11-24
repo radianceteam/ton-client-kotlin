@@ -1,4 +1,4 @@
-package examples
+package examples.modules
 
 import com.radiance.tonclient.Abi
 import com.radiance.tonclient.Abi.*
@@ -7,6 +7,7 @@ import com.radiance.tonclient.Tvm.AccountForExecutor.Account
 import com.radiance.tonclient.Tvm.ResultOfRunExecutor
 import com.radiance.tonclient.Tvm.ResultOfRunTvm
 import com.radiance.tonclient.await
+import examples.Helper
 import examples.Helper.Companion.subscriptionAbi
 import examples.Helper.Companion.subscriptionTvc
 
@@ -69,9 +70,9 @@ class TvmExample {
 
                 parsed = Helper.boc.parseAccount(account).await() as Map<*, *>
                 Helper.assertEquals(
-                    "Compare balances",
-                    parsed["balance"],
-                    originalBalance
+                        "Compare balances",
+                        parsed["balance"],
+                        originalBalance
                 )
 
                 // check standard run
@@ -89,14 +90,14 @@ class TvmExample {
                 ).await()
 
                 Helper.assertEquals(
-                    "Message Id",
-                    (result.transaction as Map<*, *>)["in_msg"],
-                    encoded!!.messageId
+                        "Message Id",
+                        (result.transaction as Map<*, *>)["in_msg"],
+                        encoded!!.messageId
                 )
 
                 Helper.assertTrue(
-                    "Positive transaction fee",
-                    result.fees.totalAccountFees > 0
+                        "Positive transaction fee",
+                        result.fees.totalAccountFees > 0
                 )
 
                 return account
@@ -111,10 +112,10 @@ class TvmExample {
         val keys = Helper.crypto.generateRandomSignKeys().await()
         val signer = Keys(keys)
         val address = Helper.deployWithGiver(
-            subscriptionAbi,
-            DeploySet(subscriptionTvc, null, null),
-            CallSet("constructor", null, "{\"wallet\":\"$walletAddress\"}"),
-            signer
+                subscriptionAbi,
+                DeploySet(subscriptionTvc, null, null),
+                CallSet("constructor", null, "{\"wallet\":\"$walletAddress\"}"),
+                signer
         )!!.await()
         println("Address: $address")
         val result: Any = Helper.net.waitForCollection(
