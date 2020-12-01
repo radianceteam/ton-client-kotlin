@@ -8,6 +8,28 @@ Just dive into the ```examples``` package and have a look.
 With the ```main.kt```, you can run all the example in a row.
 If you want, you can comment out the examples in this file and focus on a specific implementation.
 
+## How to run the examples
+
+Install ```gradle``` with your favorite dependency management tool.
+
+For example:
+- https://gradle.org/install/ *All OS*
+- https://chocolatey.org/ *Windows* ```choco install gradle```
+- https://sdkman.io/install *Windows* ```sdk install gradle```
+- https://brew.sh/index_de *MacOS* ```brew install gradle```
+- ```sudo apt install gradle``` *Ubuntu / Debian*
+- ...
+*You may need admin rights.*
+
+Then run
+
+```
+./start-container.sh     # only once
+gradle run
+```
+
+in this projects root folder.
+
 ## One more thing
 
 The ton-client-java produces ```CompletableFuture```s as results. There is a convenience extension function to

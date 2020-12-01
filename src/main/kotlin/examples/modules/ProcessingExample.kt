@@ -27,9 +27,10 @@ class ProcessingExample {
             events.plus(event.type)
         }.await()
 
-        Helper.processing.waitForTransaction(Helper.eventsAbi, encoded.message, blockId, true) { event ->
-            events.plus(event.type)
-        }.await()
+        // -- there is currently an issue with the time out
+        // Helper.processing.waitForTransaction(Helper.eventsAbi, encoded.message, blockId, true) { event ->
+        //     events.plus(event.type)
+        // }.await()
 
         Helper.net.unsubscribe(subscription).await()
 

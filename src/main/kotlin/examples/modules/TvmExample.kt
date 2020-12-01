@@ -79,7 +79,7 @@ class TvmExample {
 
                 // check standard run
                 val result: ResultOfRunExecutor = Helper.tvm.runExecutor(
-                    encoded!!.message,
+                    encoded.message,
                     Account(
                         account,
                         null // unlimitedBalance
@@ -92,7 +92,7 @@ class TvmExample {
                 Helper.assertEquals(
                         "Message Id",
                         (result.transaction as Map<*, *>)["in_msg"],
-                        encoded!!.messageId
+                        encoded.messageId
                 )
 
                 Helper.assertTrue(

@@ -37,6 +37,7 @@ fun main() = runBlocking {
     println("---         TON GraphQL        ---")
     println("===================================")
 
+// -- set appropriate string values
 //    val senderAddress = ""
 //    val senderKeys = Crypto.KeyPair("", "")
 //    val recepientAddress = ""

@@ -14,7 +14,7 @@ repositories {
 }
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.0")
-    implementation(group="com.radiance.tonclient", name = "ton-client-binding", version = "1.1", classifier = "jar-with-dependencies")
+    implementation(group="com.radiance.tonclient", name = "ton-client-binding", version = "1.1.2")
 }
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "1.8"
